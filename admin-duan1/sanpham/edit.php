@@ -19,11 +19,12 @@
                     <label for="" class="font-bold">Tên loại</label><br>
                     <select name="id_danhmuc"  class="border-[1px] border-solid border-[#ccc] ">
                             <?php
-                                foreach($listdanhmuc as $danhmuc){
-                                    extract($danhmuc);
-                                    if($id_danhmuc == $id_danhmuc) $s = "selected"; $s = "";
-                                    echo '<option value="'.$id_danhmuc.'">'.$tendanhmuc.'</option>';
+                               foreach($listdanhmuc as $danhmuc) {
+                                extract($danhmuc);
+                                if($id_danhmuc == $id_danhmuc) $s = "selected"; else $s = "";
+                                echo '<option value="'.$id_danhmuc.'" '.$s.'>'.$tendanhmuc.'</option>';
                                 }
+                            
                             ?>
                             
                         </select>
@@ -58,7 +59,7 @@
                     </div>
                 <div class="row mb10 ">
                     <input type="hidden" name="id_product" value="<?=$id_product?>">
-                    <input class="text-black border-[1px] border-solid border-[#ccc] w-[100px]  w-[100px] p-2 hover:bg-blue-600 hover:text-[#fff] mb-[20px]" type="submit" value="CẬP NHẬT" name="capnhat" onclick="alert('Cập nhật thành công!')">
+                    <input class="text-black border-[1px] border-solid border-[#ccc] w-[100px]  w-[100px] p-2 hover:bg-blue-600 hover:text-[#fff] mb-[20px]" type="submit" value="CẬP NHẬT" name="capnhat">
                     <input class="text-black border-[1px] border-solid border-[#ccc] w-[100px]  w-[100px] p-2 hover:bg-blue-600 hover:text-[#fff] ml-[20px] mb-[20px]"type="reset" value="NHẬP LẠI">
                 </div>
                 <?php

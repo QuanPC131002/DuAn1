@@ -55,8 +55,7 @@ if ($endProduct >= $rowcount) {
                                    </a></li>';
                                 }
                             ?>
-                            <!-- <li><a href="" class="block text-[#000]">Xì Gà Cuba</a></li>
-                            <li><a href="" class="block text-[#000]">Xì Gà đẹp</a></li> -->
+                           
                             
                         </ul>
                     </div>
@@ -115,14 +114,4 @@ if ($endProduct >= $rowcount) {
             </div>
             
         </div>
-        <!-- copy từ sau dòng 52 -->
-        <!-- <div class="">
-                            <form action="index1.php?act=addtocart" method="POST">
-                            <input type="hidden" name="id_product" value="'.$id_product.'">
-                            <input type="hidden" name="tensp" value="'.$tensp.'">
-                            <input type="hidden" name="anh" value="'.$anh.'">
-                            <input type="hidden" name="gia" value="'.$gia.'">
-                            <input type="submit" name="addtocart" value="THÊM VÀO GIỎ" class="cursor-pointer bg-[#c51230] text-[#fff] p-3 w-full 
-                            hover:bg-[#fff] hover:border-[2px] hover:border-solid hover:border-[#c51230] hover:text-[#c51230]">
-                            </form>
-                            </div> -->
+      

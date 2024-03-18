@@ -38,7 +38,6 @@
             color: #fff;
         }
         body{
-            /* background-image: url(upload/wallpapersden.com_city-buildings-skyscraper-view_3440x1440.jpg); */
             background-attachment: fixed;
             background-size: cover;
             background-position: center;
@@ -58,10 +57,8 @@
 
         .counter-new {
             width: 150px;
-            /* margin: auto; */
             display: flex;
             align-items: center;
-            /* justify-content: center; */
         }
 
         .counter-new input {
@@ -272,9 +269,7 @@
                 <div class="shopping ">
                     <a href="index1.php?act=addtocart" class="cart-icon"><i
                             class="fa-solid fa-cart-shopping text-[#000] text-[22px]"></i></a>
-                    <!-- <a href="index1.php?act=addtocart"><img src="view/img-sp/shopping.jpg"></a> -->
-                    <!-- <span id="cart-item-count" class="quantity">0</span> -->
-                </div>
+             
                 <div class="login">
                     <ul>
                         <?php
@@ -285,10 +280,6 @@
                         <strong class="text-[20px]">
                             <?=$user?>
                         </strong>
-                        <i class="fa-solid fa-user"></i>
-                        <!-- <li class="">
-                  <a href="index1.php?act=quenmk">Quên mật khẩu</a>
-                </li> -->
 
                         <li class="">
                             <a href="index1.php?act=mybill" style="color:#000; margin-left: 8px;">Đơn hàng</a>

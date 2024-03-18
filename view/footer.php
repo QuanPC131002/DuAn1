@@ -44,7 +44,7 @@
         <div class="row ">
           <div class="col-12 text-center">
             <div class="copyright mt-5 pt-5">
-              <p><small>&copy; by Nhóm 4 no copyright.</small></p>
+              <p><small>&copy; by XGND no copyright.</small></p>
             </div>
           </div>
         </div> 

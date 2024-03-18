@@ -13,13 +13,11 @@ ob_start();
             // DANH MỤC
             case 'adddm':
                 if(isset($_POST['themmoi']) && $_POST['themmoi']){
-                    // validate
                     $error = [];
                     if(empty($_POST['tendanhmuc'])){
                         $error['tendanhmuc'] = "Vui lòng nhập tên loại !";
                     }
                     if(empty($error)){
-                        // Nếu không lỗi -> so sánh dữ liệu với database -> thêm danh mục
                         $tendanhmuc=$_POST['tendanhmuc'];
                         insert_danhmuc($tendanhmuc);
                         $thongbao = "Thêm thành công";
@@ -42,15 +40,13 @@ ob_start();
                 include "danhmuc/list.php";
                 break;
             case 'suadm' :
-                // Nếu id tồn tại và lớn hơn 0 -> hiển thị 1 danh mục muốn sửa
                 if(isset($_GET['id_danhmuc']) && $_GET['id_danhmuc'] > 0){
                     $dm = loadOne_danhmuc($_GET['id_danhmuc']);
                 };
                 include "danhmuc/edit.php";
                 break;
             case 'updatedm';
-            // Nếu tồn tại nút capnhat và người dùng click vào nút capnhat
-            // Thực hiện so sánh dữ liệu với database -> update danh mục -> load lại danh mục
+           
                 if(isset($_POST['capnhat']) && ($_POST['capnhat'])){
                     $error = [];
                     if(empty($_POST['tendanhmuc'])){
@@ -93,9 +89,7 @@ ob_start();
                         $target_dir = "../upload/";// đường dẫn vào folder
                         $target_file = $target_dir . basename($_FILES["anh"]["name"]);
                         if (move_uploaded_file($_FILES["anh"]["tmp_name"], $target_file)) {
-                            // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
                           } else {
-                            // echo "Sorry, there was an error uploading your file.";
                           }
                           insert_sanpham($tensp,$gia,$mota,$id_danhmuc,$anh);
                         $thongbao = "Thêm thành công";
@@ -132,7 +126,6 @@ ob_start();
                 include "sanpham/edit.php";
                 break;
             case 'updatesp':
-                // Kiểm tra xem nút "Cập nhật" đã được nhấn và dữ liệu đã được gửi đi
                 if(isset($_POST['capnhat']) && ($_POST['capnhat'])){
                     $error = [];
                     if(empty($_POST['tensp'])){
@@ -148,23 +141,21 @@ ob_start();
                     // Nếu không có lỗi nào được tìm thấy
                     // lây giá trị từ form
                     if(empty($error)){
-                    $id_product=$_POST['id_product'];
-                    $id_danhmuc=$_POST['id_danhmuc'];
-                    $tensp=$_POST['tensp'];
-                    $gia=$_POST['gia'];
-                    $mota=$_POST['mota'];
-                    $anh=$_FILES['anh']['name']; 
-                    $target_dir = "../upload/";// Đường dẫn đích để lưu trữ tệp ảnh
-                    $target_file = $target_dir . basename($_FILES["anh"]["name"]);
-                    // Di chuyển tệp ảnh vào thư mục đích trên máy chủ
-                    if (move_uploaded_file($_FILES["anh"]["tmp_name"], $target_file)) {
-                        // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
-                      } else {
-                        // echo "Sorry, there was an error uploading your file.";
-                      }
-                     update_sanpham($tensp,$anh,$gia,$id_danhmuc,$mota,$id_product);
-                    $thongbao = "Cập nhật thành công";
-                }
+                        $id_product=$_POST['id_product'];
+                        $id_danhmuc=$_POST['id_danhmuc'];
+                        $tensp=$_POST['tensp'];
+                        $gia=$_POST['gia'];
+                        $mota=$_POST['mota'];
+                        $anh=$_FILES['anh']['name']; 
+                        $target_dir = "../upload/";// Đường dẫn đích để lưu trữ tệp ảnh
+                        $target_file = $target_dir . basename($_FILES["anh"]["name"]);
+                        // Di chuyển tệp ảnh vào thư mục đích trên máy chủ
+                        if (move_uploaded_file($_FILES["anh"]["tmp_name"], $target_file)) {
+                        } else {
+                        }
+                        update_sanpham($tensp,$anh,$gia,$id_danhmuc,$mota,$id_product);
+                        $thongbao = "Cập nhật thành công";
+                    }
                 }
                 $listdanhmuc=loadAll_danhmuc();
                 $listsanpham = loadAll_sanpham();
@@ -202,8 +193,7 @@ ob_start();
                 include "giohang/listbill.php";
                 break;
             case 'billct':
-                // Kiểm tra xem có tham số 'id_order' truyền qua phương thức GET không
-                // Gán giá trị của 'id_order' từ URL vào biến $id_order
+                
                 if (isset($_GET['id_order'])) {
                     $id_order = $_GET['id_order'];
             
@@ -215,7 +205,6 @@ ob_start();
                     
                     include "giohang/billct.php";
                 } else {
-                    
                 }
                 break;
             case 'xoadh' :
